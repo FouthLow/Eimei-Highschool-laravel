@@ -1,0 +1,815 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e0e0e0;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-left: 8px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #666;
+}
+
+.user-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.user-info p {
+    font-size: 11px;
+    color: #666;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.group-label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+    color: #222;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #000;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.nav-item.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+    flex: 1;
+    padding: 24px 32px;
+    background-color: #ffffff;
+}
+
+/* TOP HEADER */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.header-title h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-title h1 span {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.header-title p {
+    font-size: 12px;
+    color: #555;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-box {
+    position: relative;
+    width: 280px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 36px 8px 16px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    outline: none;
+    font-size: 12px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #333;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* WELCOME TEXT */
+.welcome-text h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.welcome-text h2 span {
+    font-weight: 700;
+    color: #000;
+}
+
+/* STATS CARDS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.stat-card {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* CARDS COMMON */
+.card {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+/* MIDDLE GRID */
+.middle-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* CALENDAR CARD & SCROLLABLE DATES */
+.calendar-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.nav-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.month-title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* --- FITUR SCROLL TANGGAL (UPDATE) --- */
+.dates-scroll-container {
+    display: flex;
+    justify-content: space-between; /* Membuat tanggal terbagi rata di tengah kartu */
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.dates-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.date-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 48px;
+    cursor: pointer;
+}
+
+.date-item .day {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.date-item .number {
+    font-size: 20px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.date-item.active .number {
+    background-color: #000;
+    color: #fff;
+}
+
+.card-footer-title h3 {
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+/* AGENDA CARD */
+.agenda-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.agenda-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.agenda-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0;
+}
+
+.agenda-date {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+.agenda-details h4 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.agenda-details p {
+    font-size: 10px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.link-more {
+    margin-top: auto;
+    align-self: flex-end;
+    font-size: 11px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: underline;
+}
+
+/* NEWS GRID */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.news-card h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.news-card h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.news-date {
+    font-size: 11px;
+    color: #444;
+    margin-bottom: 16px;
+}
+
+.news-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.small-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-author span {
+    font-size: 10px;
+    color: #555;
+}
+
+.news-image-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.news-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* HALAMAN PENGATURAN */
+.settings-container {
+    max-width: 900px;
+    padding-top: 10px;
+}
+
+.page-main-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: #111;
+}
+
+.settings-profile {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.profile-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar-large {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #444;
+}
+
+.profile-info-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-info-text p {
+    font-size: 13px;
+    color: #666;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-left: 20px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.btn-black:hover {
+    background-color: #222;
+}
+
+.btn-outline {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn-outline:hover {
+    background-color: #f0f0f0;
+}
+
+.settings-form {
+    margin-bottom: 48px;
+}
+
+.form-row-names {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-field.disabled {
+    background-color: #efefef;
+    border: 1px solid #dedede;
+    color: #888;
+}
+
+.security-section {
+    margin-top: 32px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+}
+
+.security-item {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.btn-side {
+    padding: 10px 28px;
+}
+
+/* ===================================================
+   HALAMAN BERITA (NEWS MANAGEMENT)
+   =================================================== */
+.berita-container {
+    padding-top: 10px;
+}
+
+.page-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.page-title-row .page-main-title {
+    margin-bottom: 0;
+}
+
+.btn-add-news {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* GRID CARD BERITA */
+.berita-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.berita-card {
+    border: 1px solid #000;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.berita-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+}
+
+.berita-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.berita-card-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.berita-card-body h4 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.berita-card-body p {
+    font-size: 10px;
+    color: #555;
+}
+
+/* PAGINATION */
+.pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.page-btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.page-btn.active {
+    background-color: #e5e5e5;
+    border-color: #999;
+    color: #000;
+}
+
+/* ===================================================
+   HALAMAN AGENDA KEGIATAN
+   =================================================== */
+.agenda-page-container {
+    padding-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-action {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* BIG CALENDAR CARD */
+.calendar-big-card {
+    padding: 32px 40px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-big-card .dates-scroll-container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* AGENDA ITEMS GRID */
+.agenda-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.agenda-item-card {
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.agenda-item-number {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: #000;
+}
+
+.agenda-item-body h4 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.agenda-item-body p {
+    font-size: 11px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.agenda-item-body p i {
+    font-size: 12px;
+}
+
+/* --- FOOTER & ACTION BUTTONS ON BERITA CARD --- */
+.berita-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.berita-card-footer p {
+    font-size: 10px;
+    color: #555;
+    margin: 0;
+}
+
+.card-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-card-action {
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-card-action:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-card-action.delete {
+    border-color: #d32f2f;
+    color: #d32f2f;
+}
+
+.btn-card-action.delete:hover {
+    background-color: #d32f2f;
+    color: #fff;
+}

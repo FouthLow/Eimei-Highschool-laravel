@@ -1,0 +1,161 @@
+/* Reset Basic */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Main Container Card */
+.login-card {
+  display: flex;
+  width: 950px;
+  max-width: 95%;
+  background-color: #ffffff;
+  padding: 20px;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Image Container */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 450px; /* Sesuaikan ukuran gambar */
+  height: auto;
+  display: block;
+}
+
+/* Form Container Styling */
+.form-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 40px;
+}
+
+.title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.title-group h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
+}
+
+.title-group h2 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555555;
+  margin-top: 4px;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1.5px solid #000000;
+  border-radius: 50px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #333333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox Section */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #000000;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: #000000;
+}
+
+.checkbox-group label {
+  font-size: 13px;
+  color: #444444;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-submit:hover {
+  opacity: 0.85;
+}
+
+/* Footer Link */
+.footer-text {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 12px;
+  color: #333333;
+}
+
+.footer-text a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}

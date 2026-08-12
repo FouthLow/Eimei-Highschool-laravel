@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
+
+/* ===================================================
+   RESET & BASE STYLES
+   =================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geomini", sans-serif;
+  color: #111;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 88%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================================
+   HERO SECTION TERANG (PAGE BULU TANGKIS)
+   =================================================== */
+.hero-light {
+  background-color: #ffffff;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.navbar-light {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 30px;
+}
+
+/* Styling Logo PNG di Navbar Terang */
+.logo-img-light {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-links-light {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links-light a {
+  font-size: 0.85rem;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.nav-links-light a:hover {
+  color: #4a3aff;
+}
+
+/* Hero Badminton Title */
+.hero-badminton-title {
+  text-align: center;
+  position: relative;
+  padding: 40px 0 20px;
+}
+
+/* Styling Logo PNG di Tengah Hero Title */
+.hero-logo-img {
+  height: 55px;
+  width: auto;
+  margin: 0 auto 15px;
+  display: block;
+  object-fit: contain;
+}
+
+.hero-badminton-title h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #4a3aff; /* Warna ungu aksen sesuai desain */
+  letter-spacing: -1px;
+}
+
+/* Dekorasi Kok Badminton */
+.deco-kok {
+  position: absolute;
+  width: 130px;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+}
+
+.kok-left {
+  top: 10px;
+  left: 5%;
+  transform: rotate(-35deg);
+}
+
+.kok-right {
+  top: -10px;
+  right: 5%;
+  transform: rotate(45deg);
+}
+
+/* Tagline & Deskripsi */
+.hero-badminton-desc {
+  max-width: 680px;
+  margin: 30px auto 50px;
+  text-align: left;
+}
+
+.hero-badminton-desc h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4a3aff;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.hero-badminton-desc p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   GALERI 4 GAMBAR INTERAKTIF (EFEK HOVER ONLY)
+   =================================================== */
+.gallery-interactive {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  margin: 40px 0 60px;
+}
+
+/* Semua 4 gambar punya ukuran & tinggi sama secara default */
+.gallery-card {
+  flex: 1;
+  height: 290px;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+/* Gambar yang sedang di-HOVER akan membesar & bertambah tinggi */
+.gallery-card:hover {
+  flex: 1.4;
+  height: 400px;
+  box-shadow: 0 12px 28px rgba(74, 58, 255, 0.25);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* ===================================================
+   SECTION: FOKUS PEMBINAAN & KURIKULUM
+   =================================================== */
+.section-curriculum {
+  padding: 60px 0 80px;
+}
+
+.grid-curriculum {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.curriculum-image img {
+  border-radius: 4px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.curriculum-content h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #4a3aff;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.curriculum-item {
+  margin-bottom: 24px;
+}
+
+.curriculum-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.curriculum-item p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   SECTION: BANNER KARAKTER SISWA KAMI
+   =================================================== */
+.section-character-banner {
+  padding: 40px 0 60px;
+}
+
+.section-title-purple {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a3aff;
+  margin-bottom: 24px;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ===================================================
+   SECTION: POIN KARAKTER & FASILITAS
+   =================================================== */
+.section-features {
+  padding: 20px 0 80px;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #4a3aff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+.facility-block {
+  margin-top: 40px;
+}
+
+/* ===================================================
+   SECTION: JEJAK PRESTASI
+   =================================================== */
+.section-achievement {
+  padding: 50px 0 80px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.achievement-item .bullet {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #111;
+  margin-top: 2px;
+}
+
+.achievement-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.achievement-text p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.achievement-image {
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.achievement-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===================================================
+   SECTION: AGENDA & BERITA
+   =================================================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.section-agenda {
+  padding: 60px 0 80px;
+}
+
+.agenda-title h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.agenda-title p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.big-date span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.big-date strong {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.agenda-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #111;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-right: 20px;
+}
+
+.card .date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.card .location {
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.card-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: block;
+  text-align: right;
+  color: #000;
+}
+
+/* SECTION BERITA */
+/* ===================================================
+   PERBAIKAN SECTION BERITA & UKURAN GAMBAR
+   =================================================== */
+.section-news {
+  padding: 0 0 60px; /* Dikurangi dari 90px agar lebih ringkas */
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #111;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 220px; /* Batasi tinggi maksimal kartu berita */
+}
+
+.news-card {
+  padding: 20px 25px; /* Dikecilkan dari 35px agar konten teks tidak terlalu tinggi */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card h3 {
+  font-size: 0.95rem; /* Dikecilkan dari 1.05rem */
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.news-desc {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Mengatur wadah gambar berita */
+.news-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Memaksa gambar mengikuti tinggi wadah & terpotong rapi (object-fit) */
+.news-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 220px; /* Membatasi tinggi gambar */
+  object-fit: cover; /* Mencegah gambar gepeng / menggunakan ukuran asli */
+  display: block;
+}
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Styling Logo PNG di Footer (Latar Belakang Gelap) */
+.footer-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: brightness(0) invert(1); /* Membuat logo ber-warna hitam menjadi putih */
+}
+
+.footer-desc {
+  font-size: 0.8rem;
+  color: #aaa;
+  max-width: 280px;
+}
+
+.footer-links h4 {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  font-size: 0.75rem;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+
+.arc-decoration {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 0 0 16px rgba(255, 255, 255, 0.15),
+    0 0 0 32px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   =================================================== */
+@media (max-width: 768px) {
+  .gallery-interactive {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .gallery-card, .gallery-card:hover, .gallery-card.active {
+    width: 100%;
+    height: 220px;
+    flex: none;
+  }
+  .grid-curriculum, .achievement-grid, .grid-2, .news-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .deco-kok {
+    display: none;
+  }
+}

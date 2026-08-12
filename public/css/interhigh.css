@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
+
+/* ===================================================
+   RESET & BASE STYLES
+   =================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geomini", sans-serif;
+  color: #111;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 88%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================================
+   HERO SECTION GELAP
+   =================================================== */
+.hero-dark {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding-bottom: 140px;
+  min-height: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navbar Gelap Atas */
+.navbar-dark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 40px;
+}
+
+/* Logo PNG di Navbar */
+.logo-img-dark {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1); /* Mengubah logo menjadi warna putih di latar gelap */
+}
+
+.nav-links-dark {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links-dark a {
+  font-size: 0.85rem;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.nav-links-dark a:hover {
+  color: #fff;
+}
+
+/* Header Title Hero Gelap */
+.hero-dark-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.hero-dark-left h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.hero-dark-left p {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.hero-dark-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Logo PNG di Hero Header Kanan */
+.hero-logo-right {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Hero Content & Quotes Spacing */
+.hero-dark-content {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0;
+  z-index: 2;
+}
+
+.quote-item {
+  margin-bottom: 85px;
+}
+
+.quote-main p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.quote-sub p {
+  font-size: 0.95rem;
+  color: #c5c5c5;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.quote-foot p {
+  font-size: 0.9rem;
+  color: #999999;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   DEKORASI BOLA & ALAT
+   =================================================== */
+.deco-img {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco-shuttlecock {
+  top: 130px;
+  left: -80px;
+  width: 180px;
+}
+
+.deco-basketball {
+  top: 360px;
+  right: -90px;
+  width: 250px;
+}
+
+.deco-volleyball {
+  top: 480px;
+  left: -90px;
+  width: 200px;
+}
+
+.deco-soccer {
+  bottom: 0px;
+  left: -60px;
+  width: 180px;
+}
+
+/* Dekorasi Garis Lengkung di Sudut Kanan Bawah */
+.arc-decoration {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 0 0 16px rgba(255, 255, 255, 0.15),
+    0 0 0 32px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===================================================
+   SECTION: PROGRAM SISWA (GALERI HOVER EXPAND)
+   =================================================== */
+.section-gallery {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.gallery-interactive {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.gallery-card {
+  flex: 1;
+  height: 290px; /* Ukuran default semua gambar sejajar */
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px 16px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay span {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+/* Efek saat gambar di-hover: Melebar & Bertambah Tinggi */
+.gallery-card:hover {
+  flex: 1.4;
+  height: 400px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card:hover .card-overlay {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.gallery-card:hover .card-overlay span {
+  transform: translateY(-4px);
+}
+
+/* ===================================================
+   SECTION: JEJAK PRESTASI
+   =================================================== */
+.section-achievement {
+  padding: 50px 0 80px;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.achievement-item .bullet {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #111;
+  margin-top: 2px;
+}
+
+.achievement-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.achievement-text p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.achievement-image {
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.achievement-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* ===================================================
+   SECTION: AGENDA & BERITA
+   =================================================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.section-agenda {
+  padding: 60px 0 80px;
+}
+
+.agenda-title h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.agenda-title p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.big-date span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.big-date strong {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.agenda-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #111;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-right: 20px;
+}
+
+.card .date {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.card .location {
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.card-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: block;
+  text-align: right;
+  color: #000;
+}
+
+/* SECTION BERITA */
+/* ===================================================
+   PERBAIKAN SECTION BERITA & UKURAN GAMBAR
+   =================================================== */
+.section-news {
+  padding: 0 0 60px; /* Dikurangi dari 90px agar lebih ringkas */
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #111;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 220px; /* Batasi tinggi maksimal kartu berita */
+}
+
+.news-card {
+  padding: 20px 25px; /* Dikecilkan dari 35px agar konten teks tidak terlalu tinggi */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card h3 {
+  font-size: 0.95rem; /* Dikecilkan dari 1.05rem */
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.news-desc {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Mengatur wadah gambar berita */
+.news-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Memaksa gambar mengikuti tinggi wadah & terpotong rapi (object-fit) */
+.news-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 220px; /* Membatasi tinggi gambar */
+  object-fit: cover; /* Mencegah gambar gepeng / menggunakan ukuran asli */
+  display: block;
+}
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo PNG di Footer */
+.footer-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-desc {
+  font-size: 0.8rem;
+  color: #aaa;
+  max-width: 280px;
+}
+
+.footer-links h4 {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  font-size: 0.75rem;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   =================================================== */
+@media (max-width: 768px) {
+  .gallery-interactive {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .gallery-card, .gallery-card:hover {
+    width: 100%;
+    height: 220px;
+    flex: none;
+  }
+  .achievement-grid, .grid-2, .news-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .achievement-image {
+    margin: 20px auto 0;
+  }
+  .achievement-image img {
+    height: 380px;
+  }
+  .deco-img, .arc-decoration {
+    display: none;
+  }
+}
