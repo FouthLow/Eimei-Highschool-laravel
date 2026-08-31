@@ -11,7 +11,9 @@ class AuthController extends Controller
     // Menampilkan Form Login Admin
     public function showLoginForm()
     {
-        return view('admin.auth.login');
+        // Sesuaikan dengan letak file login.blade.php kamu. 
+        // Jika file ada di resources/views/login.blade.php, gunakan view('login')
+        return view('login'); 
     }
 
     // Proses Authentikasi Login
@@ -27,8 +29,8 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
-            // Redirect ke Dashboard Admin setelah sukses login
-            return redirect()->intended(route('admin.dashboard'));
+            // PAKSA REDIRECT LANGSUNG KE ROUTE DASHBOARD ADMIN
+            return redirect()->route('admin.dashboard');
         }
 
         return back()->withErrors([

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BeritaController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -44,6 +47,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
             return view('admin.dashboard'); // Nanti halaman dashboard ditaro di resources/views/admin/dashboard.blade.php
         })->name('dashboard');
 
+        Route::resource('berita', BeritaController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     });
 

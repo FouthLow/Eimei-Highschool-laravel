@@ -596,6 +596,7 @@ body {
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 14px;
+    text-decoration: none;
 }
 
 /* GRID CARD BERITA */
@@ -673,6 +674,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .page-btn:hover {
